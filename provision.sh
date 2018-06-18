@@ -12,8 +12,8 @@
 # Host
 host_name=""
 # user
-sudo_user=""
-sudo_password="" #will be encrypted using mkpasswd
+sudo_user="webmaster"
+sudo_password="betalife" #will be encrypted using mkpasswd
 
 # git config
 git_name=""
