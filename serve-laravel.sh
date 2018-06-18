@@ -54,10 +54,9 @@ block="server {
         deny all;
     }
 
-    ssl_certificate     /etc/nginx/ssl/$1.crt;
-    ssl_certificate_key /etc/nginx/ssl/$1.key;
 }
 "
 
 echo "$block" > "/etc/nginx/sites-available/$1"
 ln -fs "/etc/nginx/sites-available/$1" "/etc/nginx/sites-enabled/$1"
+service nginx restart

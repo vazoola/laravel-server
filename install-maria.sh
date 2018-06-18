@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # MySQL
-if [[ "$1" && "$2" && "$3"  ]]
+if [[ "$1" && "$2" && "$3" ]]
 	then
 		mysql_root_username=$1
 		mysql_username=$2
