@@ -318,12 +318,21 @@ sudo apt-get install -y --force-yes nodejs
 
 
 # Install Mongo
-pecl install mongodb
-echo "extension=mongodb.so" >> php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"
+sudo rm -rf /tmp/mongo-php-driver /usr/src/mongo-php-driver
+git clone https://github.com/mongodb/mongo-php-driver.git /tmp/mongo-php-driver
+sudo mv /tmp/mongo-php-driver /usr/src/mongo-php-driver
+cd /usr/src/mongo-php-driver
+git submodule -q update --init
 
-service php7.1-fpm restart
-
-
+phpize7.1
+./configure --with-php-config=/usr/bin/php-config7.1 > /dev/null
+make clean > /dev/null
+make >/dev/null 2>&1
+sudo make install
+sudo bash -c "echo 'extension=mongodb.so' > /etc/php/7.1/mods-available/mongo.ini"
+sudo ln -s /etc/php/7.1/mods-available/mongo.ini /etc/php/7.1/cli/conf.d/20-mongo.ini
+sudo ln -s /etc/php/7.1/mods-available/mongo.ini /etc/php/7.1/fpm/conf.d/20-mongo.ini
+sudo service php7.1-fpm restart
 
 # Configure Supervisor Autostart
 
