@@ -152,7 +152,8 @@ php7.1-pgsql php7.1-sqlite3 php7.1-gd \
 php7.1-curl php7.1-memcached \
 php7.1-imap php7.1-mysql php7.1-mbstring \
 php7.1-xml php7.1-zip php7.1-bcmath php7.1-soap \
-php7.1-intl php7.1-readline php-xdebug php-pear
+php7.1-intl php7.1-readline php-xdebug php-pear \
+libcurl4-openssl-dev pkg-config libssl-dev libsslcommon2-dev
 
 update-alternatives --set php /usr/bin/php7.1
 
