@@ -48,7 +48,7 @@ cd /root
 
 
 ```bash
-git clone https://jsarry@bitbucket.org/turkubeerdev/laravel-serve.git server
+git clone https://github.com/vazoola/laravel-server.git server
 ```
 
 > Note: the scripts must be cloned into the folder `/root/server/` the provision script looks for scripts in `/root/server/`. See excerpt below.
@@ -77,15 +77,6 @@ sudo_password="supersecret" #will be encrypted using mkpasswd
 # git config
 git_name="user user"
 git_email="user@user.com"
-
-# MySQL
-mysql_username="root"
-mysql_password="supersecret"
-mysql_database="datatable"
-
-# Mongo
-mongo_user="user"
-mongo_password="supersecret"
 ```
 
 configure these to your taste.
